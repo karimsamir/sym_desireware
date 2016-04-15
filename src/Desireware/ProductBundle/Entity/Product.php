@@ -2,42 +2,25 @@
 
 namespace Desireware\ProductBundle\Entity;
 
-use Doctrine\ORM\Mapping as ORM;
-
 /**
  * Product
- *
- * @ORM\Table(name="product", indexes={@ORM\Index(name="product_category", columns={"category_id"})})
- * @ORM\Entity
  */
 class Product
 {
     /**
      * @var integer
-     *
-     * @ORM\Column(name="id", type="integer")
-     * @ORM\Id
-     * @ORM\GeneratedValue(strategy="IDENTITY")
      */
     private $id;
 
     /**
      * @var string
-     *
-     * @ORM\Column(name="name", type="string", length=255, nullable=false)
      */
     private $name;
 
     /**
      * @var \Desireware\ProductBundle\Entity\Category
-     *
-     * @ORM\ManyToOne(targetEntity="Desireware\ProductBundle\Entity\Category")
-     * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="category_id", referencedColumnName="id")
-     * })
      */
     private $category;
-
 
 
     /**
@@ -98,3 +81,4 @@ class Product
         return $this->category;
     }
 }
+
