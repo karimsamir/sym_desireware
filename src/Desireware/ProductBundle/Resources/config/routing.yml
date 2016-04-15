@@ -1,0 +1,3 @@
+desireware_product_homepage:
+    path:     /
+    defaults: { _controller: DesirewareProductBundle:Default:index }
