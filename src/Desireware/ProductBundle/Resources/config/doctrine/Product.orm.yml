@@ -1,0 +1,35 @@
+Desireware\ProductBundle\Entity\Product:
+    type: entity
+    table: product
+    indexes:
+        product_category:
+            columns:
+                - category_id
+    id:
+        id:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            id: true
+            generator:
+                strategy: IDENTITY
+    fields:
+        name:
+            type: string
+            nullable: false
+            length: 255
+            options:
+                fixed: false
+    manyToOne:
+        category:
+            targetEntity: Category
+            cascade: {  }
+            fetch: LAZY
+            mappedBy: null
+            inversedBy: null
+            joinColumns:
+                category_id:
+                    referencedColumnName: id
+            orphanRemoval: false
+    lifecycleCallbacks: {  }
