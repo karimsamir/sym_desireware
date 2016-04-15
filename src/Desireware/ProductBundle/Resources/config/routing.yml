@@ -1,3 +1,7 @@
+desireware_product_category:
+    resource: "@DesirewareProductBundle/Resources/config/routing/category.yml"
+    prefix:   /category
+
 desireware_product_homepage:
     path:     /
     defaults: { _controller: DesirewareProductBundle:Default:index }
